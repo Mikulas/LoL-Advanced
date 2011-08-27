@@ -26,10 +26,12 @@ CCore::Initialize( void )
 void
 CCore::GameLoop( void )
 {
-	if( m_bFirstLoop == true && (* reinterpret_cast<DWORD*>( g_dwPrintArgument) ) != NULL )
+	//if( m_bFirstLoop == true && (* reinterpret_cast<DWORD*>( g_dwPrintArgument) ) != NULL )
 	{
-		// This should probably be moved into a header somewhere that is tapped like ass every build
-		Print("<font color='#00FF00'>LoL!Advanced</font> 20110412 <font color='#00FF00'>loaded</font>");
+		char* message = "<font color='#00FF00'>LoL!Advanced</font> build";
+		strcat(message, __DATE__);
+		strcat(message, " <font color='#00FF00'>loaded</font>");
+		Print(message);
 		m_bFirstLoop = false;
 	}
 

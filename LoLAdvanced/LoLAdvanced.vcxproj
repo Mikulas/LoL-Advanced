@@ -83,6 +83,7 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="Detours.cpp" />
     <ClCompile Include="Entry.cpp" />
+    <ClCompile Include="Scanner.cpp" />
     <ClCompile Include="Memory.cpp" />
     <ClCompile Include="NetApp.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
@@ -99,6 +100,7 @@
     <ClInclude Include="ObjectManager.hpp" />
     <ClInclude Include="Memory.hpp" />
     <ClInclude Include="NetApp.hpp" />
+    <ClInclude Include="Scanner.hpp" />
     <ClInclude Include="StdAfx.hpp" />
     <ClInclude Include="Unit.hpp" />
   </ItemGroup>

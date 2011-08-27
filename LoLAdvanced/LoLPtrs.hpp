@@ -1,6 +1,7 @@
 #include "ObjectManager.hpp"
 #include "Unit.hpp"
 #include "NetApp.hpp"
+#include "Scanner.hpp"
 
 #if defined( _DEFINE_PTRS )
 
@@ -20,15 +21,16 @@
 #endif
 
 // Variables
-MakeVar( ObjectManager*, g_lpcUnitManager, 0x2B2C11C )
-MakeVar( Unit**, g_lpcLocalPlayer, 0x009F73EC )
-MakeVar( DWORD, g_dwPrintArgument, 0x2AA5288 )
+
+MakeVar( ObjectManager*, g_lpcUnitManager, CScanner::FindAddr(SIG_UNIT_MNGR) )
+MakeVar( Unit**, g_lpcLocalPlayer, CScanner::FindAddr(SIG_PLAYER) )
+MakeVar( DWORD, g_dwPrintArgument, CScanner::FindAddr(SIG_PRINT_ARGS) )
 
 // Function Pointers
-MakeFnc( void, __fastcall, ( void ), Game_Loop, 0x0075390E )
-MakeFnc( void, __thiscall, ( Unit* _this, DWORD dwActionType, float* lpfPos, Unit* lpcTarget, DWORD dwArg4, DWORD dwArg5, bool bUnk ), Unit_IssueOrder, 0x006EBC80 )
-MakeFnc( Unit*, __cdecl, ( DWORD dwNetworkId ), Unit_GetUnitByNetworkId, 0x81ACF0 )
-MakeFnc( int, __fastcall, ( char* szText, DWORD dwArgument, bool bUnk1, bool bUnk2 ), Print_Console, 0x7A1950 )
+MakeFnc( void, __fastcall, ( void ), Game_Loop, CScanner::FindAddr(SIG_GAMELOOP) )
+MakeFnc( void, __thiscall, ( Unit* _this, DWORD dwActionType, float* lpfPos, Unit* lpcTarget, DWORD dwArg4, DWORD dwArg5, bool bUnk ), Unit_IssueOrder, CScanner::FindAddr(SIG_ORDER) )
+MakeFnc( Unit*, __cdecl, ( DWORD dwNetworkId ), Unit_GetUnitByNetworkId, CScanner::FindAddr(SIG_NETWORK) )
+MakeFnc( int, __fastcall, ( char* szText, DWORD dwArgument, bool bUnk1, bool bUnk2 ), Print_Console, CScanner::FindAddr(SIG_PRINT_MSG) )
 
 #undef MakeFnc
 #undef MakeVar

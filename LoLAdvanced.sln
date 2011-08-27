@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+# Visual C++ Express 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoLAdvanced", "LoLAdvanced\LoLAdvanced.vcxproj", "{AAFE4B78-477F-41B1-8421-CC26DB70015C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoL!Loader", "LoL!Loader\LoL!Loader.vcxproj", "{728C1D88-9BDE-41B2-8D4A-2EE697B69C69}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AAFE4B78-477F-41B1-8421-CC26DB70015C} = {AAFE4B78-477F-41B1-8421-CC26DB70015C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
